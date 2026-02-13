@@ -8,11 +8,11 @@ class Config:
     """Base configuration"""
     
     # Database Configuration
-    DB_HOST: str = os.getenv("DB_HOST", "localhost")
+    DB_HOST: str = os.getenv("DB_HOST", "database")
     DB_PORT: int = int(os.getenv("DB_PORT", "3306"))
     DB_USER: str = os.getenv("DB_USER", "root")
     DB_PASSWORD: str = os.getenv("DB_PASSWORD", "")
-    DB_NAME: str = os.getenv("DB_NAME", "merger_roi_db")
+    DB_NAME: str = os.getenv("DB_NAME", "railway")  # Railway default
     
     # Database Connection Pool
     DB_POOL_SIZE: int = 10
@@ -34,11 +34,7 @@ class Config:
     MAX_PAGE_SIZE: int = 100
     
     # CORS
-    CORS_ORIGINS: list = [
-        "http://localhost:3000",
-        "http://localhost:80",
-        "http://localhost:8080"
-    ]
+    CORS_ORIGINS: list = ["*"]
     
     @property
     def database_url(self) -> str:
