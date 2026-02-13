@@ -1,0 +1,16 @@
+[
+  {
+    "name": "merger-backend",
+    "root": "backend",
+    "env": {
+      "PYTHON_VERSION": "3.9"
+    }
+  },
+  {
+    "name": "merger-frontend",
+    "root": "frontend",
+    "env": {
+      "NODE_VERSION": "18"
+    }
+  }
+]
