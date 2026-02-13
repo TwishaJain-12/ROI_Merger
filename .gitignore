@@ -63,7 +63,6 @@ cov.xml
 explainerdashboard.gif
 dash/
 @plotly/
-components/
 app/
 assets/
 docs/
