@@ -19,12 +19,12 @@ class BottleneckDetector:
         query = """
             SELECT 
                 firm_id,
-                DATE_FORMAT(sale_date, '%Y-%m') as period,
+                DATE_FORMAT(sale_date, '%%Y-%%m') as period,
                 COUNT(*) as transaction_count,
                 SUM(total_amount) as revenue
             FROM sales
             WHERE sale_date >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
-            GROUP BY firm_id, DATE_FORMAT(sale_date, '%Y-%m')
+            GROUP BY firm_id, DATE_FORMAT(sale_date, '%%Y-%%m')
             ORDER BY firm_id, period
         """
         results = self.db.execute_query(query)

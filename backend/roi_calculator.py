@@ -87,11 +87,11 @@ class ROICalculator:
         """Calculate ROI trends over time (monthly)"""
         query = """
             SELECT 
-                DATE_FORMAT(sale_date, '%Y-%m') as period,
+                DATE_FORMAT(sale_date, '%%Y-%%m') as period,
                 SUM(total_amount) as revenue
             FROM sales
             WHERE firm_id = %s
-            GROUP BY DATE_FORMAT(sale_date, '%Y-%m')
+            GROUP BY DATE_FORMAT(sale_date, '%%Y-%%m')
             ORDER BY period DESC
             LIMIT %s
         """
