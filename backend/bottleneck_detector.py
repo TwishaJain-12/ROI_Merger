@@ -43,26 +43,31 @@ class BottleneckDetector:
         
         bottlenecks = []
         for firm_id, periods in firm_data.items():
-            if len(periods) < 3:
-                continue
-            
-            revenues = [p['revenue'] for p in periods]
-            if not revenues:
-                continue
+            try:
+                if len(periods) < 3:
+                    continue
                 
-            avg_revenue = mean(revenues)
-            
-            # Check for declining trend
-            recent_3 = revenues[-3:]
-            if len(recent_3) == 3 and recent_3[0] > 0 and all(recent_3[i] > recent_3[i+1] for i in range(2)):
-                decline_pct = ((recent_3[0] - recent_3[-1]) / recent_3[0]) * 100
-                bottlenecks.append({
-                    'firm_id': firm_id,
-                    'type': 'sales_decline',
-                    'severity': 'high' if decline_pct > 20 else 'medium',
-                    'description': f'Sales declining for 3 consecutive months ({decline_pct:.1f}% drop)',
-                    'impact': decline_pct,
-                    'recommendation': 'Review sales strategy and market conditions'
-                })
+                revenues = [p['revenue'] for p in periods if p['revenue'] is not None]
+                if len(revenues) < 3:
+                    continue
+                    
+                avg_revenue = mean(revenues)
+                
+                # Check for declining trend
+                recent_3 = revenues[-3:]
+                if len(recent_3) == 3 and recent_3[0] > 0 and all(recent_3[i] > recent_3[i+1] for i in range(2)):
+                    decline_pct = ((recent_3[0] - recent_3[-1]) / recent_3[0]) * 100
+                    bottlenecks.append({
+                        'firm_id': firm_id,
+                        'firm_name': f"Firm {firm_id}",
+                        'type': 'sales_decline',
+                        'severity': 'high' if decline_pct > 20 else 'medium',
+                        'description': f'Sales declining for 3 consecutive months ({decline_pct:.1f}% drop)',
+                        'impact': decline_pct,
+                        'recommendation': 'Review sales strategy and market conditions'
+                    })
+            except Exception as e:
+                logger.error(f"Error skipping firm {firm_id} in bottleneck detection: {e}")
+                continue
         
         return bottlenecks
