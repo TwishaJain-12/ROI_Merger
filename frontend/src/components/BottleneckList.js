@@ -20,14 +20,14 @@ function BottleneckList({ bottlenecks }) {
         <div className="bottleneck-items">
           {bottlenecks.map((bottleneck, idx) => (
             <div key={idx} className="bottleneck-item">
-              <div 
-                className="severity-indicator" 
+              <div
+                className="severity-indicator"
                 style={{ backgroundColor: getSeverityColor(bottleneck.severity) }}
               />
               <div className="bottleneck-content">
-                <h3>Firm {bottleneck.firm_id}</h3>
-                <p className="description">{bottleneck.description}</p>
-                <p className="recommendation">{bottleneck.recommendation}</p>
+                <h3>{bottleneck.firm_name || `Firm ${bottleneck.firm_id}`}</h3>
+                <p className="description">{bottleneck.description || bottleneck.reason}</p>
+                <p className="recommendation">{bottleneck.recommendation || "Strategy review suggested"}</p>
               </div>
             </div>
           ))}

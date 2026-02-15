@@ -51,7 +51,7 @@ class ResourceOptimizer:
         
         recommendations = []
         for firm in distribution:
-            if firm['revenue_per_employee'] < avg_rpe * 0.7 and firm['staff_count'] > 5:
+            if firm['revenue_per_employee'] < avg_rpe * 0.7 and firm['staff_count'] > 2:
                 recommendations.append({
                     'firm_id': firm['firm_id'],
                     'firm_name': firm['firm_name'],

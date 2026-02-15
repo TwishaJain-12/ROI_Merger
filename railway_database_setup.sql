@@ -171,83 +171,83 @@ INSERT INTO staff (firm_id, name, role, department, hire_date, salary, performan
 
 -- TechVision Inc Sales (firm_id: 1)
 INSERT INTO sales (firm_id, product_id, product_name, sale_date, quantity, unit_price, total_amount, territory, customer_segment) VALUES
-(1, 101, 'Cloud Platform License', '2024-01-15', 5, 50000.00, 250000.00, 'West', 'Enterprise'),
-(1, 102, 'AI Analytics Suite', '2024-02-20', 3, 75000.00, 225000.00, 'West', 'Enterprise'),
-(1, 101, 'Cloud Platform License', '2024-03-10', 8, 50000.00, 400000.00, 'East', 'Mid-Market'),
-(1, 103, 'Data Integration Tool', '2024-04-05', 12, 25000.00, 300000.00, 'Central', 'Mid-Market'),
-(1, 102, 'AI Analytics Suite', '2024-05-18', 4, 75000.00, 300000.00, 'West', 'Enterprise');
+(1, 101, 'Cloud Platform License', DATE_SUB(CURDATE(), INTERVAL 90 DAY), 5, 50000.00, 250000.00, 'West', 'Enterprise'),
+(1, 102, 'AI Analytics Suite', DATE_SUB(CURDATE(), INTERVAL 60 DAY), 3, 75000.00, 225000.00, 'West', 'Enterprise'),
+(1, 101, 'Cloud Platform License', DATE_SUB(CURDATE(), INTERVAL 30 DAY), 8, 50000.00, 400000.00, 'East', 'Mid-Market'),
+(1, 103, 'Data Integration Tool', DATE_SUB(CURDATE(), INTERVAL 15 DAY), 12, 25000.00, 300000.00, 'Central', 'Mid-Market'),
+(1, 102, 'AI Analytics Suite', DATE_SUB(CURDATE(), INTERVAL 5 DAY), 4, 75000.00, 300000.00, 'West', 'Enterprise');
 
 -- DataFlow Systems Sales (firm_id: 2)
 INSERT INTO sales (firm_id, product_id, product_name, sale_date, quantity, unit_price, total_amount, territory, customer_segment) VALUES
-(2, 201, 'Data Pipeline Software', '2024-01-20', 6, 40000.00, 240000.00, 'Central', 'Enterprise'),
-(2, 202, 'ETL Tool', '2024-02-15', 10, 15000.00, 150000.00, 'East', 'Mid-Market'),
-(2, 201, 'Data Pipeline Software', '2024-03-25', 4, 40000.00, 160000.00, 'West', 'Enterprise'),
-(2, 203, 'Data Quality Suite', '2024-04-10', 8, 20000.00, 160000.00, 'Central', 'Mid-Market'),
-(2, 202, 'ETL Tool', '2024-05-05', 15, 15000.00, 225000.00, 'East', 'SMB');
+(2, 201, 'Data Pipeline Software', DATE_SUB(CURDATE(), INTERVAL 85 DAY), 6, 40000.00, 240000.00, 'Central', 'Enterprise'),
+(2, 202, 'ETL Tool', DATE_SUB(CURDATE(), INTERVAL 55 DAY), 10, 15000.00, 150000.00, 'East', 'Mid-Market'),
+(2, 201, 'Data Pipeline Software', DATE_SUB(CURDATE(), INTERVAL 25 DAY), 4, 40000.00, 160000.00, 'West', 'Enterprise'),
+(2, 203, 'Data Quality Suite', DATE_SUB(CURDATE(), INTERVAL 12 DAY), 8, 20000.00, 160000.00, 'Central', 'Mid-Market'),
+(2, 202, 'ETL Tool', DATE_SUB(CURDATE(), INTERVAL 2 DAY), 15, 15000.00, 225000.00, 'East', 'SMB');
 
 -- CloudNet Solutions Sales (firm_id: 3)
 INSERT INTO sales (firm_id, product_id, product_name, sale_date, quantity, unit_price, total_amount, territory, customer_segment) VALUES
-(3, 301, 'Cloud Infrastructure', '2024-01-10', 7, 60000.00, 420000.00, 'West', 'Enterprise'),
-(3, 302, 'Security Suite', '2024-02-22', 5, 45000.00, 225000.00, 'East', 'Enterprise'),
-(3, 301, 'Cloud Infrastructure', '2024-03-15', 9, 60000.00, 540000.00, 'Central', 'Enterprise'),
-(3, 303, 'Monitoring Tools', '2024-04-20', 12, 18000.00, 216000.00, 'West', 'Mid-Market'),
-(3, 302, 'Security Suite', '2024-05-12', 6, 45000.00, 270000.00, 'East', 'Enterprise');
+(3, 301, 'Cloud Infrastructure', DATE_SUB(CURDATE(), INTERVAL 95 DAY), 7, 60000.00, 420000.00, 'West', 'Enterprise'),
+(3, 302, 'Security Suite', DATE_SUB(CURDATE(), INTERVAL 65 DAY), 5, 45000.00, 225000.00, 'East', 'Enterprise'),
+(3, 301, 'Cloud Infrastructure', DATE_SUB(CURDATE(), INTERVAL 35 DAY), 9, 60000.00, 540000.00, 'Central', 'Enterprise'),
+(3, 303, 'Monitoring Tools', DATE_SUB(CURDATE(), INTERVAL 18 DAY), 12, 18000.00, 216000.00, 'West', 'Mid-Market'),
+(3, 302, 'Security Suite', DATE_SUB(CURDATE(), INTERVAL 8 DAY), 6, 45000.00, 270000.00, 'East', 'Enterprise');
 
 -- FinanceHub Corp Sales (firm_id: 4)
 INSERT INTO sales (firm_id, product_id, product_name, sale_date, quantity, unit_price, total_amount, territory, customer_segment) VALUES
-(4, 401, 'Trading Platform', '2024-01-25', 3, 150000.00, 450000.00, 'East', 'Enterprise'),
-(4, 402, 'Risk Analytics', '2024-02-18', 5, 80000.00, 400000.00, 'East', 'Enterprise'),
-(4, 403, 'Compliance Software', '2024-03-20', 8, 55000.00, 440000.00, 'Central', 'Mid-Market'),
-(4, 401, 'Trading Platform', '2024-04-15', 4, 150000.00, 600000.00, 'West', 'Enterprise'),
-(4, 402, 'Risk Analytics', '2024-05-10', 6, 80000.00, 480000.00, 'East', 'Enterprise');
+(4, 401, 'Trading Platform', DATE_SUB(CURDATE(), INTERVAL 100 DAY), 3, 150000.00, 450000.00, 'East', 'Enterprise'),
+(4, 402, 'Risk Analytics', DATE_SUB(CURDATE(), INTERVAL 70 DAY), 5, 80000.00, 400000.00, 'East', 'Enterprise'),
+(4, 403, 'Compliance Software', DATE_SUB(CURDATE(), INTERVAL 40 DAY), 8, 55000.00, 440000.00, 'Central', 'Mid-Market'),
+(4, 401, 'Trading Platform', DATE_SUB(CURDATE(), INTERVAL 20 DAY), 4, 150000.00, 600000.00, 'West', 'Enterprise'),
+(4, 402, 'Risk Analytics', DATE_SUB(CURDATE(), INTERVAL 10 DAY), 6, 80000.00, 480000.00, 'East', 'Enterprise');
 
 -- RetailMax Group Sales (firm_id: 5)
 INSERT INTO sales (firm_id, product_id, product_name, sale_date, quantity, unit_price, total_amount, territory, customer_segment) VALUES
-(5, 501, 'POS System', '2024-01-12', 20, 8000.00, 160000.00, 'Central', 'SMB'),
-(5, 502, 'Inventory Management', '2024-02-08', 15, 12000.00, 180000.00, 'East', 'Mid-Market'),
-(5, 503, 'Customer Loyalty Platform', '2024-03-18', 10, 15000.00, 150000.00, 'West', 'Mid-Market'),
-(5, 501, 'POS System', '2024-04-22', 25, 8000.00, 200000.00, 'South', 'SMB'),
-(5, 502, 'Inventory Management', '2024-05-15', 18, 12000.00, 216000.00, 'Central', 'Mid-Market');
+(5, 501, 'POS System', DATE_SUB(CURDATE(), INTERVAL 110 DAY), 20, 8000.00, 160000.00, 'Central', 'SMB'),
+(5, 502, 'Inventory Management', DATE_SUB(CURDATE(), INTERVAL 80 DAY), 15, 12000.00, 180000.00, 'East', 'Mid-Market'),
+(5, 503, 'Customer Loyalty Platform', DATE_SUB(CURDATE(), INTERVAL 50 DAY), 10, 15000.00, 150000.00, 'West', 'Mid-Market'),
+(5, 501, 'POS System', DATE_SUB(CURDATE(), INTERVAL 30 DAY), 25, 8000.00, 200000.00, 'South', 'SMB'),
+(5, 502, 'Inventory Management', DATE_SUB(CURDATE(), INTERVAL 15 DAY), 18, 12000.00, 216000.00, 'Central', 'Mid-Market');
 
 -- HealthCare Plus Sales (firm_id: 6)
 INSERT INTO sales (firm_id, product_id, product_name, sale_date, quantity, unit_price, total_amount, territory, customer_segment) VALUES
-(6, 601, 'EMR System', '2024-01-30', 4, 120000.00, 480000.00, 'East', 'Enterprise'),
-(6, 602, 'Patient Portal', '2024-02-25', 8, 35000.00, 280000.00, 'Central', 'Mid-Market'),
-(6, 603, 'Telemedicine Platform', '2024-03-22', 6, 50000.00, 300000.00, 'West', 'Mid-Market'),
-(6, 601, 'EMR System', '2024-04-18', 5, 120000.00, 600000.00, 'East', 'Enterprise'),
-(6, 602, 'Patient Portal', '2024-05-20', 10, 35000.00, 350000.00, 'South', 'Mid-Market');
+(6, 601, 'EMR System', DATE_SUB(CURDATE(), INTERVAL 120 DAY), 4, 120000.00, 480000.00, 'East', 'Enterprise'),
+(6, 602, 'Patient Portal', DATE_SUB(CURDATE(), INTERVAL 90 DAY), 8, 35000.00, 280000.00, 'Central', 'Mid-Market'),
+(6, 603, 'Telemedicine Platform', DATE_SUB(CURDATE(), INTERVAL 60 DAY), 6, 50000.00, 300000.00, 'West', 'Mid-Market'),
+(6, 601, 'EMR System', DATE_SUB(CURDATE(), INTERVAL 30 DAY), 5, 120000.00, 600000.00, 'East', 'Enterprise'),
+(6, 602, 'Patient Portal', DATE_SUB(CURDATE(), INTERVAL 10 DAY), 10, 35000.00, 350000.00, 'South', 'Mid-Market');
 
 -- EduTech Learning Sales (firm_id: 7)
 INSERT INTO sales (firm_id, product_id, product_name, sale_date, quantity, unit_price, total_amount, territory, customer_segment) VALUES
-(7, 701, 'LMS Platform', '2024-01-18', 12, 25000.00, 300000.00, 'Central', 'Mid-Market'),
-(7, 702, 'Course Creation Tool', '2024-02-12', 20, 8000.00, 160000.00, 'East', 'SMB'),
-(7, 703, 'Student Analytics', '2024-03-28', 15, 12000.00, 180000.00, 'West', 'Mid-Market'),
-(7, 701, 'LMS Platform', '2024-04-25', 10, 25000.00, 250000.00, 'South', 'Mid-Market'),
-(7, 702, 'Course Creation Tool', '2024-05-22', 25, 8000.00, 200000.00, 'Central', 'SMB');
+(7, 701, 'LMS Platform', DATE_SUB(CURDATE(), INTERVAL 130 DAY), 12, 25000.00, 300000.00, 'Central', 'Mid-Market'),
+(7, 702, 'Course Creation Tool', DATE_SUB(CURDATE(), INTERVAL 100 DAY), 20, 8000.00, 160000.00, 'East', 'SMB'),
+(7, 703, 'Student Analytics', DATE_SUB(CURDATE(), INTERVAL 70 DAY), 15, 12000.00, 180000.00, 'West', 'Mid-Market'),
+(7, 701, 'LMS Platform', DATE_SUB(CURDATE(), INTERVAL 40 DAY), 10, 25000.00, 250000.00, 'South', 'Mid-Market'),
+(7, 702, 'Course Creation Tool', DATE_SUB(CURDATE(), INTERVAL 15 DAY), 25, 8000.00, 200000.00, 'Central', 'SMB');
 
 -- GreenEnergy Co Sales (firm_id: 8)
 INSERT INTO sales (firm_id, product_id, product_name, sale_date, quantity, unit_price, total_amount, territory, customer_segment) VALUES
-(8, 801, 'Solar Panel Installation', '2024-01-22', 8, 180000.00, 1440000.00, 'West', 'Enterprise'),
-(8, 802, 'Energy Management System', '2024-02-28', 5, 95000.00, 475000.00, 'Central', 'Enterprise'),
-(8, 803, 'Battery Storage', '2024-03-30', 6, 120000.00, 720000.00, 'South', 'Enterprise'),
-(8, 801, 'Solar Panel Installation', '2024-04-28', 10, 180000.00, 1800000.00, 'West', 'Enterprise'),
-(8, 802, 'Energy Management System', '2024-05-25', 7, 95000.00, 665000.00, 'East', 'Enterprise');
+(8, 801, 'Solar Panel Installation', DATE_SUB(CURDATE(), INTERVAL 140 DAY), 8, 180000.00, 1440000.00, 'West', 'Enterprise'),
+(8, 802, 'Energy Management System', DATE_SUB(CURDATE(), INTERVAL 110 DAY), 5, 95000.00, 475000.00, 'Central', 'Enterprise'),
+(8, 803, 'Battery Storage', DATE_SUB(CURDATE(), INTERVAL 80 DAY), 6, 120000.00, 720000.00, 'South', 'Enterprise'),
+(8, 801, 'Solar Panel Installation', DATE_SUB(CURDATE(), INTERVAL 50 DAY), 10, 180000.00, 1800000.00, 'West', 'Enterprise'),
+(8, 802, 'Energy Management System', DATE_SUB(CURDATE(), INTERVAL 20 DAY), 7, 95000.00, 665000.00, 'East', 'Enterprise');
 
 -- LogiTrans Inc Sales (firm_id: 9)
 INSERT INTO sales (firm_id, product_id, product_name, sale_date, quantity, unit_price, total_amount, territory, customer_segment) VALUES
-(9, 901, 'Fleet Management Software', '2024-01-28', 10, 45000.00, 450000.00, 'Central', 'Mid-Market'),
-(9, 902, 'Route Optimization', '2024-02-20', 15, 28000.00, 420000.00, 'East', 'Mid-Market'),
-(9, 903, 'Warehouse Management', '2024-03-25', 8, 55000.00, 440000.00, 'West', 'Enterprise'),
-(9, 901, 'Fleet Management Software', '2024-04-30', 12, 45000.00, 540000.00, 'South', 'Mid-Market'),
-(9, 902, 'Route Optimization', '2024-05-28', 18, 28000.00, 504000.00, 'Central', 'Mid-Market');
+(9, 901, 'Fleet Management Software', DATE_SUB(CURDATE(), INTERVAL 150 DAY), 10, 45000.00, 450000.00, 'Central', 'Mid-Market'),
+(9, 902, 'Route Optimization', DATE_SUB(CURDATE(), INTERVAL 120 DAY), 15, 28000.00, 420000.00, 'East', 'Mid-Market'),
+(9, 903, 'Warehouse Management', DATE_SUB(CURDATE(), INTERVAL 90 DAY), 8, 55000.00, 440000.00, 'West', 'Enterprise'),
+(9, 901, 'Fleet Management Software', DATE_SUB(CURDATE(), INTERVAL 60 DAY), 12, 45000.00, 540000.00, 'South', 'Mid-Market'),
+(9, 902, 'Route Optimization', DATE_SUB(CURDATE(), INTERVAL 30 DAY), 18, 28000.00, 504000.00, 'Central', 'Mid-Market');
 
 -- MediaWorks Studio Sales (firm_id: 10)
 INSERT INTO sales (firm_id, product_id, product_name, sale_date, quantity, unit_price, total_amount, territory, customer_segment) VALUES
-(10, 1001, 'Video Production Service', '2024-01-15', 5, 75000.00, 375000.00, 'West', 'Enterprise'),
-(10, 1002, 'Animation Package', '2024-02-10', 8, 45000.00, 360000.00, 'East', 'Mid-Market'),
-(10, 1003, 'Marketing Campaign', '2024-03-12', 6, 60000.00, 360000.00, 'Central', 'Mid-Market'),
-(10, 1001, 'Video Production Service', '2024-04-08', 7, 75000.00, 525000.00, 'West', 'Enterprise'),
-(10, 1002, 'Animation Package', '2024-05-18', 10, 45000.00, 450000.00, 'South', 'Mid-Market');
+(10, 1001, 'Video Production Service', DATE_SUB(CURDATE(), INTERVAL 160 DAY), 5, 75000.00, 375000.00, 'West', 'Enterprise'),
+(10, 1002, 'Animation Package', DATE_SUB(CURDATE(), INTERVAL 130 DAY), 8, 45000.00, 360000.00, 'East', 'Mid-Market'),
+(10, 1003, 'Marketing Campaign', DATE_SUB(CURDATE(), INTERVAL 100 DAY), 6, 60000.00, 360000.00, 'Central', 'Mid-Market'),
+(10, 1001, 'Video Production Service', DATE_SUB(CURDATE(), INTERVAL 70 DAY), 7, 75000.00, 525000.00, 'West', 'Enterprise'),
+(10, 1002, 'Animation Package', DATE_SUB(CURDATE(), INTERVAL 40 DAY), 10, 45000.00, 450000.00, 'South', 'Mid-Market');
 
 -- ============================================
 -- STEP 6: CREATE VIEWS FOR ANALYTICS

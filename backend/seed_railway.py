@@ -33,11 +33,19 @@ def seed():
             print(f"📖 Found {len(sql_commands)} commands. Executing...")
             
             for command in sql_commands:
-                if command.strip():
-                    try:
-                        cursor.execute(command)
-                    except Exception as e:
-                        print(f"⚠️ Warning: Some commands might already exist. Skipping...")
+                command = command.strip()
+                if not command:
+                    continue
+                
+                # Skip database creation/use statements to stay in 'railway' db
+                if command.upper().startswith(('CREATE DATABASE', 'USE ')):
+                    print(f"⏭️ Skipping: {command[:20]}...")
+                    continue
+                    
+                try:
+                    cursor.execute(command)
+                except Exception as e:
+                    print(f"⚠️ Warning during command '{command[:30]}...': {str(e)}")
             
             print("✅ Database Seeding Complete! Your dashboard is now alive.")
             

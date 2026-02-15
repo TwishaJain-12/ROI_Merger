@@ -4,9 +4,9 @@ import './ROIChart.css';
 
 function ROIChart({ data }) {
   const chartData = data.slice(0, 10).map(item => ({
-    name: `Firm ${item.firm_id}`,
-    roi: item.roi_percentage.toFixed(1),
-    revenue: item.revenue
+    name: item.firm_name || `Firm ${item.firm_id}`,
+    roi: (item.roi_percentage || 0).toFixed(1),
+    revenue: item.revenue || 0
   }));
 
   return (
