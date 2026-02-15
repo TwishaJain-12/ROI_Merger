@@ -8,11 +8,11 @@ class Config:
     """Base configuration"""
     
     # Database Configuration
-    DB_HOST: str = os.getenv("DB_HOST", "database")
+    DB_HOST: str = os.getenv("DB_HOST", "mysql")
     DB_PORT: int = int(os.getenv("DB_PORT", "3306"))
     DB_USER: str = os.getenv("DB_USER", "root")
     DB_PASSWORD: str = os.getenv("DB_PASSWORD", "")
-    DB_NAME: str = os.getenv("DB_NAME", "railway")  # Railway default
+    DB_NAME: str = os.getenv("DB_NAME", "railway")
     
     # Database Connection Pool
     DB_POOL_SIZE: int = 10

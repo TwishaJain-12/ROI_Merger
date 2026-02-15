@@ -14,6 +14,7 @@ class DatabaseConnector:
     
     def __init__(self):
         self.connection: Optional[pymysql.connections.Connection] = None
+        self.last_error: Optional[str] = None
         
     def connect(self) -> bool:
         """Establish database connection"""
@@ -31,6 +32,7 @@ class DatabaseConnector:
             logger.info("Database connection established")
             return True
         except Exception as e:
+            self.last_error = str(e)
             logger.error(f"Database connection failed: {e}")
             return False
     
@@ -81,6 +83,6 @@ def get_db_connection():
         if db.connect():
             yield db
         else:
-            raise Exception("Failed to connect to database")
+            raise Exception(f"Database connection failed: {db.last_error}")
     finally:
         db.disconnect()
