@@ -11,8 +11,14 @@ const apiClient = axios.create({
 
 const api = {
   getDashboardSummary: async () => {
-    const response = await apiClient.get('/api/dashboard/summary');
-    return response.data;
+    try {
+      console.log('Fetching dashboard summary from:', API_BASE_URL);
+      const response = await apiClient.get('/api/dashboard/summary');
+      return response.data;
+    } catch (error) {
+      console.error('API Error (getDashboardSummary):', error.message);
+      throw error;
+    }
   },
 
   getFirms: async (limit = null) => {
