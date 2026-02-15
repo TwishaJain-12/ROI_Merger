@@ -47,11 +47,14 @@ class BottleneckDetector:
                 continue
             
             revenues = [p['revenue'] for p in periods]
+            if not revenues:
+                continue
+                
             avg_revenue = mean(revenues)
             
             # Check for declining trend
             recent_3 = revenues[-3:]
-            if len(recent_3) == 3 and all(recent_3[i] > recent_3[i+1] for i in range(2)):
+            if len(recent_3) == 3 and recent_3[0] > 0 and all(recent_3[i] > recent_3[i+1] for i in range(2)):
                 decline_pct = ((recent_3[0] - recent_3[-1]) / recent_3[0]) * 100
                 bottlenecks.append({
                     'firm_id': firm_id,
