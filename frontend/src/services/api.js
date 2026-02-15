@@ -7,16 +7,17 @@ const apiClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  timeout: 10000, // 10 second timeout
 });
 
 const api = {
   getDashboardSummary: async () => {
     try {
-      console.log('Fetching dashboard summary from:', API_BASE_URL);
+      console.log('Fetching summary from:', API_BASE_URL + '/api/dashboard/summary');
       const response = await apiClient.get('/api/dashboard/summary');
       return response.data;
     } catch (error) {
-      console.error('API Error (getDashboardSummary):', error.message);
+      console.error('FETCH ERROR (Summary):', error.response ? error.response.data : error.message);
       throw error;
     }
   },
